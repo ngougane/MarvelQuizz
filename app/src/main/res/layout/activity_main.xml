@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="Choisir une réponse"
             android:textSize="15sp"
             android:textStyle="italic" />
@@ -68,10 +68,11 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/validateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="80dp"
             android:background="@color/colorPrimary"
             android:text="Valider" />
 
