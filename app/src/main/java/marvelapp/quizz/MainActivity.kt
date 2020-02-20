@@ -16,11 +16,16 @@ class MainActivity : AppCompatActivity() {
         // text field initialization
         questionText.text = "Qui est-ce personnage Marvel ?"
 
-        //Text Button Radio initialisation
+        //Text Button Radio initialization
         firstResponse.text = "Batman"
         secondResponse.text = "Aquaman"
         thirdResponse.text = "Thor"
 
+        /*
+         * Function to initialize a message toast
+         * @parametre message : String
+         * @return toast
+         */
         fun toastMaker (message: String) {
             val duration = Toast.LENGTH_LONG
             var toast = Toast.makeText(applicationContext, message, duration)
@@ -28,12 +33,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Definition button action
-        //Evénement que l'on va déclencher au click
         validateButton.setOnClickListener{
-            //initialisation du message de résultat
+            //message initialization
             var message = "Réponse :"
-
-
             // Vérification des réponses
             if (firstResponse.isChecked) {
                 message += " Bravo !!! La bonne réponse est bien Batman !!!"
