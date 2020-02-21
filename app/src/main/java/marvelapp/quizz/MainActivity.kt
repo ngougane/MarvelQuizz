@@ -3,6 +3,7 @@ package marvelapp.quizz
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,10 +17,20 @@ class MainActivity : AppCompatActivity() {
         // text field initialization
         questionText.text = "Qui est-ce personnage Marvel ?"
 
-        //Text Button Radio initialization
-        firstResponse.text = "Batman"
-        secondResponse.text = "Aquaman"
-        thirdResponse.text = "Thor"
+         //Text Button Radio initialization
+        //Initialization data
+        var responses = mutableListOf("Batman", "Aquaman", "Superman")
+        //Call shuffle method to have random result
+        responses.shuffle()
+
+        for (response in responses){
+
+            var radioButton = RadioButton(this)
+            radioButton.text = response
+            radioGroup.addView(radioButton)
+
+        }
+
 
         /*
          * Function to initialize a message toast
@@ -32,20 +43,20 @@ class MainActivity : AppCompatActivity() {
             return toast.show()
         }
 
-        //Definition button action
-        validateButton.setOnClickListener{
-            //message initialization
-            var message = "Réponse :"
-            // Vérification des réponses
-            if (firstResponse.isChecked) {
-                message += " Bravo !!! La bonne réponse est bien Batman !!!"
-                toastMaker(message)
-            } else {
-                message += " Dommage :( La bonne réponse est Batman"
-                toastMaker(message)
-            }
-
-        }
+//        //Definition button action
+//        validateButton.setOnClickListener{
+//            //message initialization
+//            var message = "Réponse :"
+//            // Vérification des réponses
+//            if (firstResponse.isChecked) {
+//                message += " Bravo !!! La bonne réponse est bien Batman !!!"
+//                toastMaker(message)
+//            } else {
+//                message += " Dommage :( La bonne réponse est Batman"
+//                toastMaker(message)
+//            }
+//
+//        }
 
     }
 }

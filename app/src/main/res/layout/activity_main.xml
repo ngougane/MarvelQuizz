@@ -19,13 +19,13 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/quizzImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:visibility="visible"
-            tools:srcCompat="@drawable/batman2" />
+    <ImageView
+        android:id="@+id/quizzImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/batman2" />
 
         <TextView
             android:id="@+id/chooseText"
@@ -38,33 +38,9 @@
             android:textStyle="italic" />
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/firstResponse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Reponse 1" />
-
-                <RadioButton
-                    android:id="@+id/secondResponse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Reponse 2" />
-
-                <RadioButton
-                    android:id="@+id/thirdResponse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Reponse 3" />
-
         </RadioGroup>
 
         <Button
