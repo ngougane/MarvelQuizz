@@ -43,20 +43,27 @@ class MainActivity : AppCompatActivity() {
             return toast.show()
         }
 
-//        //Definition button action
-//        validateButton.setOnClickListener{
-//            //message initialization
-//            var message = "Réponse :"
-//            // Vérification des réponses
-//            if (firstResponse.isChecked) {
-//                message += " Bravo !!! La bonne réponse est bien Batman !!!"
-//                toastMaker(message)
-//            } else {
-//                message += " Dommage :( La bonne réponse est Batman"
-//                toastMaker(message)
-//            }
-//
-//        }
+          //Definition button action
+              validateButton.setOnClickListener{
+            //message initialization
+              var message = "Réponse :"
+                  //Je vais vérifier dans la radioGroup si un bouton radio a été checked
+                  // Si aucun n'est checké il renvoie -1
+                  // Si il est checked je vais comparé sa valeur à la bonne réponse
+                  val checkedRadioButtonId = radioGroup.checkedRadioButtonId
+
+                  val selectedRadioButton = radioGroup.findViewById<RadioButton>(checkedRadioButtonId)
+
+                  // Vérification des réponses
+              if (selectedRadioButton.text ==  "Batman") {
+                message += " Bravo !!! La bonne réponse est bien Batman !!!"
+                  toastMaker(message)
+            } else {
+             message += " Dommage :( La bonne réponse est Batman"
+              toastMaker(message)
+              }
+
+       }
 
     }
 }
