@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:visibility="visible"
-        app:srcCompat="@drawable/batman2" />
+        app:srcCompat="@drawable/batman_small" />
 
         <TextView
             android:id="@+id/chooseText"

@@ -3,6 +3,7 @@ package marvelapp.quizz
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
@@ -16,6 +17,15 @@ class MainActivity : AppCompatActivity() {
 
         // text field initialization
         questionText.text = "Qui est-ce personnage Marvel ?"
+
+        //Set a view full on click to the image view
+
+            quizzImage.setOnClickListener{
+                println("click !!!")
+                quizzImage.setImageResource(R.drawable.batman)
+
+            }
+
 
          //Text Button Radio initialization
         //Initialization data
@@ -47,20 +57,18 @@ class MainActivity : AppCompatActivity() {
               validateButton.setOnClickListener{
             //message initialization
               var message = "Réponse :"
-                  //Je vais vérifier dans la radioGroup si un bouton radio a été checked
-                  // Si aucun n'est checké il renvoie -1
-                  // Si il est checked je vais comparé sa valeur à la bonne réponse
-                  val checkedRadioButtonId = radioGroup.checkedRadioButtonId
+              //I will check in the radioGroup if a radio button has been checked
+              val checkedRadioButtonId = radioGroup.checkedRadioButtonId
+              val selectedRadioButton = radioGroup.findViewById<RadioButton>(checkedRadioButtonId)
 
-                  val selectedRadioButton = radioGroup.findViewById<RadioButton>(checkedRadioButtonId)
-
-                  // Vérification des réponses
+              // If none is checked it returns -1
+              //If it is checked I compared the value to the right answer
               if (selectedRadioButton.text ==  "Batman") {
                 message += " Bravo !!! La bonne réponse est bien Batman !!!"
-                  toastMaker(message)
+                toastMaker(message)
             } else {
-             message += " Dommage :( La bonne réponse est Batman"
-              toastMaker(message)
+                message += " Dommage :( La bonne réponse est Batman"
+                toastMaker(message)
               }
 
        }
