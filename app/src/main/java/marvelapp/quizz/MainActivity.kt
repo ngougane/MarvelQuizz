@@ -62,9 +62,12 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        //shuffle the list of flashcard
+        marvels.shuffle()
+
+        //fill the flashcard
         showQuestion(marvels.get(currentIndex))
 
-        answerIsCorrect(marvels.get(currentIndex))
 
     }
 
@@ -89,7 +92,10 @@ class MainActivity : AppCompatActivity() {
 
         //Text Button Radio initialization
         var radiobuttonlist = flashcard.responses
+        //Filling the radio buttons
         createRadioButton(radiobuttonlist)
+        // Checking the right answer
+        answerIsCorrect(flashcard)
 
     }
 
@@ -132,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             currentIndex++
             //I check if there are other questions
             if(currentIndex >= marvels.size){
-                println("c'est terminé")
+                validateButton.text = "Voir les résultats"
             }else{ // we going to the next question
                 radioGroup.removeAllViews()
                 showQuestion(marvels.get(currentIndex))
