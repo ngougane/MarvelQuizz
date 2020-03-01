@@ -68,9 +68,16 @@ class MainActivity : AppCompatActivity() {
         //fill the flashcard
         showQuestion(marvels.get(currentIndex))
 
+        indexQuizz(currentIndex,marvels.size)
+
 
     }
 
+
+    fun indexQuizz(currentIndex : Int, total : Int){
+
+        supportActionBar!!.title = "Marvel Quizz - ${currentIndex + 1} / ${total}"
+    }
 
     /*
   * Function to initialize a message toast
@@ -142,9 +149,11 @@ class MainActivity : AppCompatActivity() {
             }else{ // we going to the next question
                 radioGroup.removeAllViews()
                 showQuestion(marvels.get(currentIndex))
+                indexQuizz(currentIndex,marvels.size)
             }
 
         }
     }
+
 
 }
