@@ -3,9 +3,13 @@ package marvelapp.quizz
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import com.squareup.picasso.Picasso;
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         marvels.add(
             Flashcard(
                 "Qui est-ce personnage de Marvel ?",
-                "batman_small",
+                "https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg",
                 "batman",
                 mutableListOf("Batman", "Groot", "Robin"),
                 "Batman"
@@ -35,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         marvels.add(
             Flashcard(
                 "De qui s'agit-il ? ",
-                "batman_small",
+                "https://www.superherodb.com/pictures2/portraits/10/100/659.jpg",
                 "batman",
                 mutableListOf("Jessica Jones", "Catwoman", "America Chavez"),
                 "Catwoman"
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         marvels.add(
             Flashcard(
                 "Mais qui est-ce personnage ?",
-                "batman_small",
+                "https://www.superherodb.com/pictures2/portraits/10/100/247.jpg",
                 "batman",
                 mutableListOf("Black Panther", "Le fauve", "Drax"),
                 "Black Panther"
@@ -55,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         marvels.add(
             Flashcard(
                 "Qui est ce superheroe ? ",
-                "batman_small",
+                "https://www.superherodb.com/pictures2/portraits/10/100/161.jpg",
                 "batman",
                 mutableListOf("Colossus", "Drax", "Wolverine"),
                 "Wolverine"
@@ -96,6 +100,11 @@ class MainActivity : AppCompatActivity() {
 
         //Question initialization
         questionText.text = flashcard.question
+
+        //Loading image using Picasso
+       Picasso.get().load("http://i.imgur.com/DvpvklR.png")
+           .into(quizzImage)
+
 
         //Text Button Radio initialization
         var radiobuttonlist = flashcard.responses

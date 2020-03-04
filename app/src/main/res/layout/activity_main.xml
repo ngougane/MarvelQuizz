@@ -22,10 +22,10 @@
     <ImageView
         android:id="@+id/quizzImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
         android:visibility="visible"
-        app:srcCompat="@drawable/batman_small" />
+        android:layout_marginTop="20dp" />
 
         <TextView
             android:id="@+id/chooseText"
